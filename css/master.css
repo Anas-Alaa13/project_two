@@ -1,0 +1,95 @@
+*{
+    margin-bottom: 5px;
+}
+.k_4{
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+    padding-left: 20px;
+
+}
+
+.page{
+    padding-left: 20px;
+    display: grid;
+    background-color: white;
+    grid-template-columns:repeat(4,1fr);
+         gap:10px;
+}
+
+
+
+.fp,.bp,.cp,.tp{
+    transition: transform 0.3s ease;
+}
+.cp:hover,.bp:hover, .fp:hover,.tp:hover {
+        transform: translateY(5px);
+    }
+
+        .vvv {
+            font-size: 50px;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+            background-color: #eee;
+            background: linear-gradient(to top, #aaa, #333);
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            text-align: center; 
+            
+        }
+        .t{
+            background-color: #eee;
+                position: relative;
+                display: inline-block;
+                border-radius: 20px;
+            
+        }
+        .t p {
+            display: block;
+        }
+        .t a {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            font-weight: bold;
+            padding: 10px 20px;
+            text-decoration: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            width: 90%;
+            height: 90%;
+            display: inline-block;
+            border-radius: 20px;
+            align-content: center;
+           text-align: center;
+        }
+
+        .t:hover a {
+            opacity: 1;
+      
+        }
+        @media (min-width:0px) and (max-width: 767px) {
+            .page{
+                grid-template-columns:  repeat(1,1fr);
+        
+            }
+        }
+        
+        
+        @media (min-width: 768px) and (max-width: 991px) {
+            .page{
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        
+        @media (min-width: 992px) and (max-width: 1200px)  {
+            .page{
+                grid-template-columns: repeat(3, 1fr);
+            }
+        
+        }
+        
+         

@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 5</title>
+    <link rel="stylesheet" href="css/sec1-style.css">
+    <link rel="stylesheet" href="./css/master.css">  
+    <link rel="stylesheet" href="css/sec3-main.css">
+    <link rel="stylesheet" href="css/sec4.css">
+    <link rel="stylesheet" href="web.css">
+
+    <link rel="stylesheet" href="css/sec4-media-query.css">
+
+    <link rel="stylesheet" href="sec6.css">
+    <link rel="stylesheet" href="ahmed.css">
+    <link rel="stylesheet" href="">
+            <!-- bootstrap -->
+    <!-- <link rel="stylesheet" href="bootstrap/css/bootstrap.css.map">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"> -->
+</head>
+<body>
+        <div class="heading" id="sidebar">
+            <div class="main" id="top1" onclick="hidebar()"><svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></div>
+            <div onclick="home()" class="main" id="top2"><p><svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 -960 960 960" width="25px" fill="#e8eaed"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg>home</p></div>
+            <div onclick="category()" class="main" id="top3"><p><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m260-520 220-360 220 360H260ZM700-80q-75 0-127.5-52.5T520-260q0-75 52.5-127.5T700-440q75 0 127.5 52.5T880-260q0 75-52.5 127.5T700-80Zm-580-20v-320h320v320H120Zm580-60q42 0 71-29t29-71q0-42-29-71t-71-29q-42 0-71 29t-29 71q0 42 29 71t71 29Zm-500-20h160v-160H200v160Zm202-420h156l-78-126-78 126Zm78 0ZM360-340Zm340 80Z"/></svg>category</p></div>
+            <div onclick="trending()" class="main" id="top4"><p><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e8eaed"><path d="m136-240-56-56 296-298 160 160 208-206H640v-80h240v240h-80v-104L536-320 376-480 136-240Z"/></svg>trending news</p></div>
+            <div onclick="recentnews()" class="main" id="top5"><p><svg xmlns="http://www.w3.org/2000/svg" height="17px" viewBox="0 -960 960 960" width="17px" fill="#e8eaed"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h440l200 200v440q0 33-23.5 56.5T760-120H200Zm0-80h560v-400H600v-160H200v560Zm80-80h400v-80H280v80Zm0-320h200v-80H280v80Zm0 160h400v-80H280v80Zm-80-320v160-160 560-560Z"/></svg>recent news</p></div>
+            <div onclick="clubranking()" class="main" id="top6"><p><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e8eaed"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg>clubs ranking</p></div>
+            <div onclick="sportArticle()" class="main" id="top7"><p><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e8eaed"><path d="M520-40v-240l-84-80-40 176-276-56 16-80 192 40 64-324-72 28v136h-80v-188l158-68q35-15 51.5-19.5T480-720q21 0 39 11t29 29l40 64q26 42 70.5 69T760-520v80q-66 0-123.5-27.5T540-540l-24 120 84 80v300h-80Zm20-700q-33 0-56.5-23.5T460-820q0-33 23.5-56.5T540-900q33 0 56.5 23.5T620-820q0 33-23.5 56.5T540-740Z"/></svg>sports article</p></div>
+            <div id="top8">
+                <button onclick="search_button()" id="search-button">
+                    <div><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg></div>
+                </button>
+                <input type="text" id="search-input" placeholder="Search" list="section">
+                <datalist id="section">
+                    <option value="Home"></option>
+                    <option value="Category"></option>
+                    <option value="Trending News"></option>
+                    <option value="Recent News"></option>
+                    <option value="Club Ranking"></option>
+                    <option value="Sports Article"></option>
+                </datalist>
+            </div>
+        </div>
+        <div class="heading">
+            <div style="font-size: 2.5em;" onclick="reload()" class="main" id="heading1"><span><strong>sport news</strong></span></div>
+            <div onclick="home()" class="main" id="heading2"><p><svg xmlns="http://www.w3.org/2000/svg" height="35px" viewBox="0 -960 960 960" width="35px" fill="#e8eaed"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg>home</p></div>
+            <div onclick="category()" class="main" id="heading3"><p><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m260-520 220-360 220 360H260ZM700-80q-75 0-127.5-52.5T520-260q0-75 52.5-127.5T700-440q75 0 127.5 52.5T880-260q0 75-52.5 127.5T700-80Zm-580-20v-320h320v320H120Zm580-60q42 0 71-29t29-71q0-42-29-71t-71-29q-42 0-71 29t-29 71q0 42 29 71t71 29Zm-500-20h160v-160H200v160Zm202-420h156l-78-126-78 126Zm78 0ZM360-340Zm340 80Z"/></svg>category</p></div>
+            <div onclick="trending()" class="main" id="heading4"><p><svg xmlns="http://www.w3.org/2000/svg" height="4.5px" viewBox="0 -960 960 960" width="4.5px" fill="#e8eaed"><path d="m136-240-56-56 296-298 160 160 208-206H640v-80h240v240h-80v-104L536-320 376-480 136-240Z"/></svg>trending news</p></div>
+            <div onclick="recentnews()" class="main" id="heading5"><p><svg xmlns="http://www.w3.org/2000/svg" height="17px" viewBox="0 -960 960 960" width="17px" fill="#e8eaed"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h440l200 200v440q0 33-23.5 56.5T760-120H200Zm0-80h560v-400H600v-160H200v560Zm80-80h400v-80H280v80Zm0-320h200v-80H280v80Zm0 160h400v-80H280v80Zm-80-320v160-160 560-560Z"/></svg>recent news</p></div>
+            <div onclick="clubranking()" class="main" id="heading6"><p><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e8eaed"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg>clubs ranking</p></div>
+            <div onclick="sportArticle()" class="main" id="heading7"><p><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e8eaed"><path d="M520-40v-240l-84-80-40 176-276-56 16-80 192 40 64-324-72 28v136h-80v-188l158-68q35-15 51.5-19.5T480-720q21 0 39 11t29 29l40 64q26 42 70.5 69T760-520v80q-66 0-123.5-27.5T540-540l-24 120 84 80v300h-80Zm20-700q-33 0-56.5-23.5T460-820q0-33 23.5-56.5T540-900q33 0 56.5 23.5T620-820q0 33-23.5 56.5T540-740Z"/></svg>sports article</p></div>
+            <div id="heading8">
+                <button onclick="search_button1()" id="search-button1">
+                    <div id="glass"></div>
+                    <div style="margin-top: -5px; margin-left: -120px;" id="search">Search</div>
+                </button>
+                <input type="text" id="search-input1" placeholder="Search" list="section1">
+                <datalist id="section1">
+                    <option value="Home"></option>
+                    <option value="Category"></option>
+                    <option value="Trending News"></option>
+                    <option value="Recent News"></option>
+                    <option value="Club Ranking"></option>
+                    <option value="Sports Article"></option>
+                </datalist>
+            </div>
+            <div id="menu" onclick="showbar()"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></div>
+        </div>
+        <div class="home">
+            <div class="left1">
+                <p id="text">Top<br>scorer to the final match</p>
+            </div>
+            <div class="middle1">
+                <p>
+                    The EuroLeague Finals Top Scorer is the individual award for the player
+                    that gained the highest points in the EuroLeague Finals.
+                </p>
+                <a href="https://en.wikipedia.org/wiki/EuroLeague_Finals_Top_Scorer" target="_blank">
+                <div id="reading">Continue reading</div></a>
+            </div>
+            <div class="right1">
+                <span>Race98 - 03 June 2023</span>
+                <a href="https://runnerstribe.com/latest-news/ethiopian-middle-distance-stars-shining-bright-amidst-record-breaking-year/" target="_blank" style="color: black;"><p>Ethiopian runners took the top four spots in the Olympics</p></a>
+            </div>
+            <div class="right2">
+                <span>INDYCAR - 03 June 2023</span>
+                <a href="https://www.motorsport.com/indycar/news/indycar-detroit-dixon-quickest-in-second-practice-defrancesco-wrecks/10477901/" target="_blank" style="color: black;"><p>IndyCar Detroit: Dixon quickest in second practice Only!</p></a>
+            </div>
+            <div class="top-right"></div>
+        </div>
+
+    <section id="section2">
+
+
+
+
+
+        <div class="sictwo">
+            <h3 class="k_4">Category</h3>
+            <div class="page">
+              <!-- -------------------------------------------------------------------------------- -->
+             <div class="div1">
+              <div class="t">
+                <a href="https://en.wikipedia.org/wiki/Football">More Info</a>
+                <p class="vvv"  style="padding-bottom:40px;" >FOOTBALL</p>
+              </div> 
+              <div class="fp">
+                <img src="./img/ip1.png" style="margin-top: 40px;" alt="Football"  width="250" height="250"   onmouseover="changeimg4()" onmouseout="reset4()">
+              </div> 
+             </div>
+              <!-- ----------------------------------------------------------------------------------- -->
+              <div class="div2">
+                <div class="bp">
+                  <img src="./img/in1.png" alt="car sport"  width="250" height="250"   onmouseover="changeimg3()" onmouseout="reset3()">
+                </div> 
+                <div class="t">  
+                  <a href="https://en.wikipedia.org/wiki/Sports_car">More Info</a>
+                  <p class="vvv" >BASKET BALL</p>
+              </div> 
+             </div>
+              <!-- ----------------------------------------------------------------------------------------- -->
+              <div class="div3">
+                <div class="t">
+                  <a href="https://en.wikipedia.org/wiki/Basketball">More Info</a>
+                  <p class="vvv" style="padding-bottom:40px;">CAR SPORT</p>
+                </div> 
+                <div class="cp">
+                  <img src="./img/im1.png" style="margin-top: 40px;" alt="basket ball"  width="250" height="250"   onmouseover="changeimg2()" onmouseout="reset2()">
+                </div> 
+              </div>
+              <!-- ---------------------------------------------------------------------------------------------- -->
+              <div class="div4">
+                <div class="tp">
+                  <img  src="./img/img1.png"  width="250" height="250"  alt="tens table" onmouseover="changeimg()" onmouseout="reset()">
+                </div>
+                  <div class="t">
+                  <a href="https://en.wikipedia.org/wiki/Table_tennis "target="_blank">More Info</a>
+                  <p class="vvv">TABLE TENNIS</p>
+                </div>
+              </div>
+        
+              <!-- --------------------------------------------------------------------------------- -->
+            </div>
+            <script src="./JAVA/mas.js"></script>
+        
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </section>
+    <section id="section3">
+        <body>
+    
+            <button onclick="dark()" id="dark" style="margin-top: 20px; margin-left: 20px;" type="button" class="btn btn-dark">Dark mode</button>
+        <div class="trending-container">
+        <div class="l-container">
+        <p style="font-weight: bold; font-size: 27px;">Trending News</p>
+        <div class="top">
+        <img src="imgs/img\race-hose 1.png"style="background-color: black;" width="180px">
+        <div>
+            <p class="secondary-text">Race98 - 03 June 2023</p>
+            <p class="mainText"><b>6-Year-Old Horse Dies at <br>Belmont Park After Race Injury</b></p>
+            <p class="secondary-text">New York-A 6-Year-Old horse died after <br> being injured in a race at Belmont Park <br> ahead of next week's</p>
+        </div>
+        
+        </div>
+        <div class="middle">
+            <img src="imgs/img\cyclist-leads-actionfront-view-man-riding-bicycle-racing-road 1.png" width="180px">
+            <div>
+                <hr class="line" style="margin-left: 25px;">
+                <p class="secondary-text">Jony.Ls - 03 June 2023</p>
+                <p class="mainText" >Savilia Blunk Embraces Longer<br>Season With World Cup</p>
+                <p class="secondary-text">Last year, Savilia Blunk took a more<br>conservative approach to her first season<br>as an Elite Class athelete, skipping some</p>
+            </div>
+        </div>
+        <br>
+        <div class="bottom">
+        <img src="imgs/img\empty-boxing-arena-waiting-new-round-d-render-illustration 1.png" style="background-color: brown;" height="400px" width="180px">
+        <div>
+            <hr class="line" style="margin-left: 25px;">
+            <p class="secondary-text">King - 03 June 2023</p>
+            <p class="mainText" >Ryan Gracia is fighting again,<br>this time on social media</p>
+            <p class="secondary-text">Boxing star Ryan Gracia and his promoter <br>Hall of Fame fighter Oscar De La Hoya,<br>reignited their war of words via Twitter on</p>
+        </div>
+        </div>
+        <br>       
+        </div>
+        
+        <div class="r-container">
+            <img src="imgs/img\sportsman-drinking-water-training-stationary-bike 1.png" alt="cycling">
+            <div class="label">
+                <p class="label-2">Cycling</p>
+                <p class="label-1" >Debits - 03 June 2023</p><br><br>
+                <p class="label-3" ><b>Discover the member  benifits of usa cycling!</b></p>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section id="section4">
+        <div id="carouselExampleInterval" class="carousel-slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item" data-bs-interval="3000">
+                    <div class="category">Football</div>
+                    <img src="imgs/sec4-images/sec4-img1.png">
+                    <a target="_blank" href="https://www.beinsports.com/en-mena/football/ligue-1/articles/messi-leaving-paris-saint-germain">
+                        <div class="news">
+                            <p id="fnews">agence france-presse - 04 june 2023</p>
+                            <p id="snews">LIONEL MESSI LEAVING LIGUE 1 TEAM PARIS SAINT-GERMAIN, CLUB CONFIRMS </p>
+                            <p id="tnews">the euroLeague finals top scorer is the individual awars for the player <br> that gained the highest points in the euroLeague finals</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="carousel-item" data-bs-interval="3000">
+                    <div class="category">Football</div>
+                    <img src="imgs/sec4-images/sec4-img2.png">
+                    <a target="_blank" href="https://www.cafonline.com/caf-champions-league/news/ahly-crowned-champions-of-africa-for-record-extending-12th-title/">
+                        <div class="news">
+                            <p id="fnews">26 May 2024</p>
+                            <p id="snews">Egypt's Al Ahly crowned African Champions League winners for the 12 <sup>th</sup> time</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="carousel-item" data-bs-interval="3000">
+                    <div class="category">Olympics 2024</div>
+                    <img src="imgs/sec4-images/sec4-img3.png">
+                    <a target="_blank" href="https://www.egypttoday.com/Article/8/133773/Mohamed-El-Sayed-wins-first-medal-for-Egypt-in-2024">
+                        <div class="news">
+                            <p id="fnews">29 July 2024</p>
+                            <p id="snews">Mohamed Elsayed wins Men's Épée Individual Bronze at the Olympic Games Paris 2024</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="carousel-item" data-bs-interval="3000">
+                    <div class="category">Football</div>
+                    <img src="imgs/sec4-images/sec4-img4.png">
+                    <a target="_blank" href="https://www.mancity.com/news/mens/man-city-champions-league-winners-treble-premier-league-fa-cup-63822026">
+                        <div class="news">
+                            <p id="fnews">10 Jun 2023</p>
+                            <p id="snews">Manchester City scrap their way to a first Champions League win</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <div id="btns">
+                    <span id="previous" class="previous">←</span>
+                    <span id="1" class="img-num">1</span>
+                    <span id="2" class="img-num">2</span>
+                    <span id="3" class="img-num">3</span>
+                    <span id="4" class="img-num">4</span>
+                    <span id="next" class="next">→</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="secfive">
+
+        <div class="section5">
+            <div class="part1">
+                <div class="pa1">
+                    <h2>Recent News</h2>
+                    <img src="Image/imge1.png" id="scroll" onmouseover="changeimg()" onmouseout="reset()">
+                </div>
+                <!-- <p id="p1">
+                    <span id="s1">
+                        Day 5 Highlights <br>
+                    </span>
+                    Baku 2023 World Taekwondo
+                    Championships
+                </p> -->
+            </div>
+            
+            <div class="part2">
+                <div class="continer2">
+                    
+                    <div class="imgs">
+                        <div>
+                            <img src="./Image/Image.png">
+                        </div>
+                        <div>
+                            <img src="./Image/Image2.png">
+                        </div>
+                        <div>
+                            <img src="./Image/Image3.png">
+                            
+                        </div>
+                    </div>
+                    <div class="words">
+                        <div>
+                            <span> #Pollar.87 - 12 July 2023</span>
+                            <p class="p">
+                                Baku 2023 Taekwondo
+                                Championships
+                            </p>
+                        </div>
+                        
+                        <div>
+                            
+                            <span> #Goft. Toni - 20 July 2023</span>
+                            <p class="p">
+                                Open Championship
+                                Royal Liverpool Golf
+                            </p>
+                        </div>
+                        <div>
+                            <span> #Cricket. Toni - 27 July 2023</span>
+                            <p class="p">
+                                Ireland Tour of Enland
+                                Test 2023
+                            </p>
+                        </div>
+                    </div>
+    
+                </div>
+                <div class="btn">
+                    <button id="ptn" oncl> More </button>
+                </div>
+            </div>
+    
+            <div class="part3">
+                <div class="teams">
+                    <h2>Clubs Ranking</h2>
+                    <table>
+                        <tr>
+                            <th class="column" id="col" colspan="2">Club</th>
+                            <th class="column">GP</th>
+                            <th class="column">W</th>
+                            <th class="column">D</th>
+                            <th class="column">L</th>
+                            <th class="column">F</th>
+                            <th class="column">A</th>
+                            <th class="column">GD</th>
+                        </tr>
+                        <tr>
+                            <td class="tdd">1</td>
+                            <td>
+                                <div class="football">
+                                    <a href="https://www.mancity.com/" class="man-city" target="_blank"></a>
+                                    
+                                    <h5>Manchester City</h5>
+                                </div>
+                            </td>
+                            <td>38</td>
+                            <td>29</td>
+                            <td>6 </td>
+                            <td>3 </td>
+                            <td>99</td>
+                            <td>26</td>
+                            <td>73</td>
+                        </tr>
+                        <tr>
+                            <td class="tdd">2</td>
+                            <td>
+                                <div class="football">
+                                    <a href="https://www.manutd.com/" class="man-united" target="_blank"></a>
+                                    <h5>Manchester United</h5>
+                                </div>
+                            </td>
+                            <td>38</td>
+                            <td>29</td>
+                            <td>6 </td>
+                            <td>3 </td>
+                            <td>99</td>
+                            <td>26</td>
+                            <td>73</td>
+                            
+                        </tr>
+                        <tr>
+                            <td class="tdd">3</td>
+                            <td>
+                                <div class="football">
+                                    <a href="https://www.liverpoolfc.com/" class="liver"></a>
+                                    <h5>Liverpool</h5>
+                                </div>
+                            </td>
+                            <td>38</td>
+                            <td>21</td>
+                            <td>11</td>
+                            <td>6 </td>
+                            <td>76</td>
+                            <td>33</td>
+                            <td>43</td>
+                            
+                        </tr>
+                        <tr>
+                            <td class="tdd">4</td>
+                            <td>
+                                <div class="football">
+                                    <a href="https://www.chelseafc.com/en" class="chelsea"></a>
+                                    <h5>Chelsea</h5>
+                                </div>
+                            </td>
+                            <td>38</td>
+                            <td>22</td>
+                            <td>5 </td>
+                            <td>11</td>
+                            <td>69</td>
+                            <td>40</td>
+                            <td>29</td>
+    
+                        </tr>
+                        <tr>
+                            <td class="tdd">5</td>
+                            <td>
+                                <div class="football">
+                                    <a href="https://www.tottenhamhotspur.com/" class="tottenham"></a>
+                                    <h5>Tottenham Hotspur</h5>
+                                </div>
+                            </td>
+                            <td>38</td>
+                            <td>22</td>
+                            <td>3 </td>
+                            <td>13</td>
+                            <td>61</td>
+                            <td>48</td>
+                            <td>13</td>
+                        </tr>
+                        <tr id="arsenal">
+                            <td class="tdd">6</td>
+    
+                            <td>
+                                <div class="football">
+                                    <a href="https://www.arsenal.com/" class="arsenal"></a>
+                                    <h5>Arsenal</h5>
+                                </div>
+                            </td>
+                            <td>38</td>
+                            <td>16</td>
+                            <td>10</td>
+                            <td>12</td>
+                            <td>57</td>
+                            <td>57</td>
+                            <td>0 </td>
+    
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    
+    </div>
+
+
+
+
+        <section id="section6">
+            <div class="container">
+               <div class="article"> 
+                <div class="left">
+                    <div class="l-img">
+                        <img src="sec6-img\sec6-img1.png" >
+                        <img src="sec6-img\sec6-img2.png">
+                    </div>
+                    <div class="text">
+                        <p class="date">04 June 2023</p>
+                        <p class="main">5 Exercise Basketball PLayers Should be using to develop strength</p>
+                        <p class="disc">this article was written by jake willhotie from healithlisted.com strength
+                            in basketball isn't all about a massive body mass or ripped muscles.</p>
+                    </div>
+                </div>
+                <div class="middle">
+                    <div class="m-img">
+                        <img src="sec6-img\sec6-img3.png" >
+                        <img src="sec6-img\sec6-img4.png">
+                    </div>
+                    <div class="text">
+                        <p class="date">03 june 2023</p>
+                        <p class="main">golden knights out to fullfil owenr's quest to win stanely cup in 6th year</p>
+                        <p class="disc">the vages golden knights play the florida panthers in the stanely 
+                            cup final begging saturday.</p>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="m-img">
+                        <img src="sec6-img\sec6-img5.png" >
+                        <img src="sec6-img\sec6-img6.png">
+                    </div>
+                    <div class="text">
+                        <p class="date">01 june 2023</p>
+                        <p class="main">outdor' badminto gets support from local federation</p>
+                        <p class="disc">the badminton world federation is developing air badminton and the country's governing
+                            body, philiphine badminton association </p>
+                    </div>
+                </div>
+            </div>
+            
+    
+        </div>
+        </section>
+
+    <section class="section 7">
+    <div class="sec7">
+        <div class="container">
+           <div class="d1"><img src="images/american-football-player-posing-with-ball-white 1.png" ></div>
+           <div class="vector"><img src="images/Vector.png"></div>
+   
+           <div class="d2">
+               <input type="email" name="mail" id="search" placeholder="shovon.khan@gmail.com">
+           </div>
+               <div class="d3"><b>NEWSLETTER<br>
+                   SUBSCRIPTION</b>
+               </div>
+                   <div class="bl">↗</div>
+               </div>
+   
+   
+           <div class="sd">
+       
+               <span class="sdd1">
+                   <a href="https://www.instgram.com/?locale=ar_AR">
+                   <div class="sd1"></div>
+                   </a>
+               </span>
+               <span class="sdd2">
+                   <a href="https://www.twiter.com/?locale=ar_AR">
+                       <div class="sd2"></div>
+                   </a>
+               </span>
+               <span class="sdd3">
+                   <a href="https://www.facebook.com/?locale=ar_AR">
+                       <div class="sd3"></div>
+                   </a>
+               </span>
+               
+               <span class="sd4">←</span>
+               <span class="sd5">1</span>
+               <span class="sd6">2</span>
+               <span class="sd7">3</span>
+               <span class="sd8">4</span>
+               <span class="sd9">→</span>
+            
+                    
+           </div>
+ 
+           <button class="dark" onclick="myfunction()">dark mode</button>
+        </div>   
+
+</section>
+
+            <!-- bootstrap -->
+    <!-- <script src="bootstrap/js/bootstrap.bundle.js.map"></script>    
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script> -->
+    <script src="js/sec1-jscript.js"></script>    
+    <script src="./JAVA/mas.js"></script>    
+    <script src="js/sec3-main.js"></script>    
+    <script src="js/sec4.js"></script>    
+    <script src="web.js"></script>
+    <script src="ahmed.js"></script>
+</body>
+</html>
